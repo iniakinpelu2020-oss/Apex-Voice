@@ -71,5 +71,10 @@ resolves to `/apps/video/` in the bundle.
 
 ## State of this repo
 
-Not yet exercised in a browser. Unverified: the voice list on a machine with real voices, boundary
-progress, pause/resume across browsers, and the empty-voice fallback.
+Exercised in Chrome against the bundled build: the voice list populates and groups by language,
+Speak narrates, Pause enables while speaking, and a full read ends at 100% with "Finished". Not
+verified: boundary-event progress on a voice that emits boundaries (the test voice never fired one,
+so the bar stayed at zero while the status line named the voice), pause/resume timing across
+browsers, and the empty-voice fallback. One quirk of the test machine: Chrome listed a Microsoft
+voice its audio engine could not actually render, and the app reported "Could not speak" with the
+error toast instead of hanging; picking a Google voice spoke normally.
